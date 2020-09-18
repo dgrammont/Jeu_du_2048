@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jeu du 2048:  Fichier source de jeu2048.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="2048.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jeu du 2048
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Corrigé du 2048</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('jeu2048_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">jeu2048.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="jeu2048_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef JEU2048_H</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define JEU2048_H</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//int = const</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//out = sortie</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="jeu2048_8h.html#ae142379fc0a24c49c8f603ee3c72edc2aba00a01b102e8ab0fcc1735263eb1a4c">   18</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="jeu2048_8h.html#ae142379fc0a24c49c8f603ee3c72edc2">MODE_ALEATOIRE</a>{<a class="code" href="jeu2048_8h.html#ae142379fc0a24c49c8f603ee3c72edc2ad34d5395053a1781444508e570283be1">POSITION</a>,<a class="code" href="jeu2048_8h.html#ae142379fc0a24c49c8f603ee3c72edc2aba00a01b102e8ab0fcc1735263eb1a4c">TUILE</a>};</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_jeu2048.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_jeu2048.html">Jeu2048</a></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_jeu2048.html#a96d35735203bb9ceba62145bde867e92">   22</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_jeu2048.html#a96d35735203bb9ceba62145bde867e92">NB_VAL</a>=4;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_jeu2048.html#a43744f4cf10aaf3dbc08b1fc2042a5c8">   24</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_jeu2048.html#a43744f4cf10aaf3dbc08b1fc2042a5c8">grille</a>[4][4];</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_jeu2048.html#a667bfa0952227608fdc5099950e206c0">   26</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="class_jeu2048.html#a667bfa0952227608fdc5099950e206c0">direction</a>;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_jeu2048.html#ae2e70724269cad929e1067dff97ea82c">   28</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_jeu2048.html#ae2e70724269cad929e1067dff97ea82c">nbCoups</a>;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_jeu2048.html#a559db2f159b10e7ee58968877d4e2849">   30</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_jeu2048.html#a559db2f159b10e7ee58968877d4e2849">score</a>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_jeu2048.html#a851bd5ce17939b16a6a3182b09866b73">Jeu2048</a>();</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_jeu2048.html#aa5dec4b17eabdb7afaca0b742e3c6497">JouerCoup</a>(<span class="keywordtype">char</span> _direction);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_jeu2048.html#a1537ec04b34f441f550de121d1e08e89">ObtenirNbCoups</a>();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_jeu2048.html#a2a1383b8477b76c805f0f7d88a76820d">ObtenirScore</a>();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu2048.html#a698339c78f6285b6c218c2901e3a1100">ObtenirGrille</a>(<span class="keywordtype">int</span> _grille[][4]);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_jeu2048.html#a5ce3049c89c0dcafc7636cfaf710f07f">TirerAleatoire</a>(<span class="keyword">const</span> <a class="code" href="jeu2048_8h.html#ae142379fc0a24c49c8f603ee3c72edc2">MODE_ALEATOIRE</a> _mode);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu2048.html#ac45529ee4f096637f8b5385670da60eb">PlacerNouvelleTuille</a>();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_jeu2048.html#a114d75b40a2eaea021016f8fa609807d">Calculer</a>();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jeu2048.html#a45ab17e9db173e9a0be411c510d37890">Deplacer</a>();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_jeu2048.html#ae14335ca8d24df723511355cce5dab81">CalculerScore</a>();</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_jeu2048.html#aa894974e64fc2dd2258b81fd975cdeb3">RechercherFinDePartie</a>();</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif // JEU2048_H</span></div><div class="ttc" id="class_jeu2048_html_a2a1383b8477b76c805f0f7d88a76820d"><div class="ttname"><a href="class_jeu2048.html#a2a1383b8477b76c805f0f7d88a76820d">Jeu2048::ObtenirScore</a></div><div class="ttdeci">int ObtenirScore()</div><div class="ttdoc">Jeu2048::ObtenirScore. </div><div class="ttdef"><b>Definition:</b> jeu2048.cpp:40</div></div>
+<div class="ttc" id="jeu2048_8h_html_ae142379fc0a24c49c8f603ee3c72edc2"><div class="ttname"><a href="jeu2048_8h.html#ae142379fc0a24c49c8f603ee3c72edc2">MODE_ALEATOIRE</a></div><div class="ttdeci">MODE_ALEATOIRE</div><div class="ttdef"><b>Definition:</b> jeu2048.h:18</div></div>
+<div class="ttc" id="class_jeu2048_html_aa5dec4b17eabdb7afaca0b742e3c6497"><div class="ttname"><a href="class_jeu2048.html#aa5dec4b17eabdb7afaca0b742e3c6497">Jeu2048::JouerCoup</a></div><div class="ttdeci">bool JouerCoup(char _direction)</div><div class="ttdoc">Jeu2048::JouerCoup. </div><div class="ttdef"><b>Definition:</b> main.cpp:78</div></div>
+<div class="ttc" id="class_jeu2048_html_a43744f4cf10aaf3dbc08b1fc2042a5c8"><div class="ttname"><a href="class_jeu2048.html#a43744f4cf10aaf3dbc08b1fc2042a5c8">Jeu2048::grille</a></div><div class="ttdeci">int grille[4][4]</div><div class="ttdoc">la grille contenant le jeu </div><div class="ttdef"><b>Definition:</b> jeu2048.h:24</div></div>
+<div class="ttc" id="class_jeu2048_html"><div class="ttname"><a href="class_jeu2048.html">Jeu2048</a></div><div class="ttdef"><b>Definition:</b> jeu2048.h:19</div></div>
+<div class="ttc" id="class_jeu2048_html_a1537ec04b34f441f550de121d1e08e89"><div class="ttname"><a href="class_jeu2048.html#a1537ec04b34f441f550de121d1e08e89">Jeu2048::ObtenirNbCoups</a></div><div class="ttdeci">int ObtenirNbCoups()</div><div class="ttdoc">Jeu2048::ObtenirNbCoups. </div><div class="ttdef"><b>Definition:</b> jeu2048.cpp:32</div></div>
+<div class="ttc" id="class_jeu2048_html_a114d75b40a2eaea021016f8fa609807d"><div class="ttname"><a href="class_jeu2048.html#a114d75b40a2eaea021016f8fa609807d">Jeu2048::Calculer</a></div><div class="ttdeci">bool Calculer()</div><div class="ttdoc">Jeu2048::Calculer. </div><div class="ttdef"><b>Definition:</b> jeu2048.cpp:95</div></div>
+<div class="ttc" id="class_jeu2048_html_ae14335ca8d24df723511355cce5dab81"><div class="ttname"><a href="class_jeu2048.html#ae14335ca8d24df723511355cce5dab81">Jeu2048::CalculerScore</a></div><div class="ttdeci">int CalculerScore()</div><div class="ttdoc">Jeu2048::CalculerScore. </div><div class="ttdef"><b>Definition:</b> jeu2048.cpp:198</div></div>
+<div class="ttc" id="class_jeu2048_html_a851bd5ce17939b16a6a3182b09866b73"><div class="ttname"><a href="class_jeu2048.html#a851bd5ce17939b16a6a3182b09866b73">Jeu2048::Jeu2048</a></div><div class="ttdeci">Jeu2048()</div><div class="ttdoc">Jeu2048::Jeu2048. </div><div class="ttdef"><b>Definition:</b> jeu2048.cpp:18</div></div>
+<div class="ttc" id="class_jeu2048_html_a667bfa0952227608fdc5099950e206c0"><div class="ttname"><a href="class_jeu2048.html#a667bfa0952227608fdc5099950e206c0">Jeu2048::direction</a></div><div class="ttdeci">char direction</div><div class="ttdoc">la direction choisi par le joueur </div><div class="ttdef"><b>Definition:</b> jeu2048.h:26</div></div>
+<div class="ttc" id="jeu2048_8h_html_ae142379fc0a24c49c8f603ee3c72edc2ad34d5395053a1781444508e570283be1"><div class="ttname"><a href="jeu2048_8h.html#ae142379fc0a24c49c8f603ee3c72edc2ad34d5395053a1781444508e570283be1">POSITION</a></div><div class="ttdef"><b>Definition:</b> jeu2048.h:18</div></div>
+<div class="ttc" id="class_jeu2048_html_a96d35735203bb9ceba62145bde867e92"><div class="ttname"><a href="class_jeu2048.html#a96d35735203bb9ceba62145bde867e92">Jeu2048::NB_VAL</a></div><div class="ttdeci">const int NB_VAL</div><div class="ttdef"><b>Definition:</b> jeu2048.h:22</div></div>
+<div class="ttc" id="class_jeu2048_html_a698339c78f6285b6c218c2901e3a1100"><div class="ttname"><a href="class_jeu2048.html#a698339c78f6285b6c218c2901e3a1100">Jeu2048::ObtenirGrille</a></div><div class="ttdeci">void ObtenirGrille(int _grille[][4])</div><div class="ttdoc">Jeu2048::ObtenirGrille. </div><div class="ttdef"><b>Definition:</b> jeu2048.cpp:49</div></div>
+<div class="ttc" id="class_jeu2048_html_a559db2f159b10e7ee58968877d4e2849"><div class="ttname"><a href="class_jeu2048.html#a559db2f159b10e7ee58968877d4e2849">Jeu2048::score</a></div><div class="ttdeci">int score</div><div class="ttdoc">score obtenu, somme des case de la grille </div><div class="ttdef"><b>Definition:</b> jeu2048.h:30</div></div>
+<div class="ttc" id="class_jeu2048_html_a5ce3049c89c0dcafc7636cfaf710f07f"><div class="ttname"><a href="class_jeu2048.html#a5ce3049c89c0dcafc7636cfaf710f07f">Jeu2048::TirerAleatoire</a></div><div class="ttdeci">int TirerAleatoire(const MODE_ALEATOIRE _mode)</div><div class="ttdoc">Jeu2048::TirerAleatoire. </div><div class="ttdef"><b>Definition:</b> jeu2048.cpp:66</div></div>
+<div class="ttc" id="class_jeu2048_html_ac45529ee4f096637f8b5385670da60eb"><div class="ttname"><a href="class_jeu2048.html#ac45529ee4f096637f8b5385670da60eb">Jeu2048::PlacerNouvelleTuille</a></div><div class="ttdeci">void PlacerNouvelleTuille()</div><div class="ttdoc">Jeu2048::PlacerNouvelleTuille. </div><div class="ttdef"><b>Definition:</b> jeu2048.cpp:81</div></div>
+<div class="ttc" id="class_jeu2048_html_aa894974e64fc2dd2258b81fd975cdeb3"><div class="ttname"><a href="class_jeu2048.html#aa894974e64fc2dd2258b81fd975cdeb3">Jeu2048::RechercherFinDePartie</a></div><div class="ttdeci">bool RechercherFinDePartie()</div><div class="ttdoc">Jeu2048::RechercherFinDePartie. </div><div class="ttdef"><b>Definition:</b> jeu2048.cpp:215</div></div>
+<div class="ttc" id="class_jeu2048_html_a45ab17e9db173e9a0be411c510d37890"><div class="ttname"><a href="class_jeu2048.html#a45ab17e9db173e9a0be411c510d37890">Jeu2048::Deplacer</a></div><div class="ttdeci">void Deplacer()</div><div class="ttdoc">Jeu2048::Deplacer. </div><div class="ttdef"><b>Definition:</b> jeu2048.cpp:147</div></div>
+<div class="ttc" id="class_jeu2048_html_ae2e70724269cad929e1067dff97ea82c"><div class="ttname"><a href="class_jeu2048.html#ae2e70724269cad929e1067dff97ea82c">Jeu2048::nbCoups</a></div><div class="ttdeci">int nbCoups</div><div class="ttdoc">nombre de déplacement </div><div class="ttdef"><b>Definition:</b> jeu2048.h:28</div></div>
+<div class="ttc" id="jeu2048_8h_html_ae142379fc0a24c49c8f603ee3c72edc2aba00a01b102e8ab0fcc1735263eb1a4c"><div class="ttname"><a href="jeu2048_8h.html#ae142379fc0a24c49c8f603ee3c72edc2aba00a01b102e8ab0fcc1735263eb1a4c">TUILE</a></div><div class="ttdef"><b>Definition:</b> jeu2048.h:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="jeu2048_8h.html">jeu2048.h</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>
